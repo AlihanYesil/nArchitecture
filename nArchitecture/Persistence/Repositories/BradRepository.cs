@@ -14,7 +14,6 @@ public class BradRepository : EfRepositoryBase<Brand,Guid,BaseDbContext>, IBradR
 {
 	public BradRepository(BaseDbContext context): base(context)
 	{
-	
-	
+
 	}
 }
