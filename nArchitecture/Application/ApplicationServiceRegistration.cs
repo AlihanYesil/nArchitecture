@@ -1,6 +1,10 @@
-﻿using Core.Application.Pipelines.Transaction;
+﻿using Core.Application.Pipelines.Caching;
+using Core.Application.Pipelines.Logging;
+using Core.Application.Pipelines.Transaction;
 using Core.Application.Pipelines.Validation;
 using Core.Application.Rules;
+using Core.CrossCuttingConcerns.SeriLog;
+using Core.CrossCuttingConcerns.SeriLog.Logger;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -25,8 +29,11 @@ public static class ApplicationServiceRegistration
 		{
 			configuration.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
 			configuration.AddOpenBehavior(typeof(TransactionScopeBehavior<,>));
+			configuration.AddOpenBehavior(typeof(CachingBehavior<,>));
+			configuration.AddOpenBehavior(typeof(CacheRemovingBehavior<,>));
+			configuration.AddOpenBehavior(typeof(LoggingBehavior<,>));
 		});
-
+		services.AddSingleton<LoggerServiceBase,MsSqlLogger>();
 		return services;
 	}
 
