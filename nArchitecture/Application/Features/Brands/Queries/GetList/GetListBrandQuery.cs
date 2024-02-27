@@ -28,10 +28,10 @@ public class GetListBrandQuery : IRequest<GetListResponse<GetListBrandListItemDt
 
 	public  class GetListBrandQueryHandler: IRequestHandler<GetListBrandQuery, GetListResponse<GetListBrandListItemDto>>
 	{
-		private readonly IBradRepository _brandRepository;
+		private readonly IBrandRepository _brandRepository;
 		private readonly IMapper _mapper;
 
-		public GetListBrandQueryHandler(IBradRepository brandRepository, IMapper mapper)
+		public GetListBrandQueryHandler(IBrandRepository brandRepository, IMapper mapper)
 		{
 			_brandRepository = brandRepository;
 			_mapper = mapper;

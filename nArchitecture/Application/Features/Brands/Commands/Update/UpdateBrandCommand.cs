@@ -22,10 +22,10 @@ public string CacheKey => "";
 	public string? CacheGroupKey => "GetBrands";
 	public class UpdateBrandCommandHandler : IRequestHandler<UpdateBrandCommand, UpdatedBrandResponse>
 	{
-		private readonly IBradRepository _brandRepository;
+		private readonly IBrandRepository _brandRepository;
 		private readonly IMapper _mapper;
 
-		public UpdateBrandCommandHandler(IBradRepository repository, IMapper mapper)
+		public UpdateBrandCommandHandler(IBrandRepository repository, IMapper mapper)
 		{
 			_brandRepository = repository;
 			_mapper = mapper;

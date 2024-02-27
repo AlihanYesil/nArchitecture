@@ -13,9 +13,9 @@ namespace Application.Features.Brands.Rules;
 
 public class BrandBusinessRules:BaseBusinessRules
 {
-	private readonly IBradRepository _brandRepository;
+	private readonly IBrandRepository _brandRepository;
 
-	public BrandBusinessRules(IBradRepository brandRepository)
+	public BrandBusinessRules(IBrandRepository brandRepository)
 	{
 		_brandRepository = brandRepository;
 	}

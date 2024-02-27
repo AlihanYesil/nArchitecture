@@ -20,7 +20,7 @@ public static class PersistenceServiceRegistration
 		//services.AddDbContext<BaseDbContext>(options => options.UseInMemoryDatabase("nArchitecture"));
 
 		services.AddDbContext<BaseDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("stringDeneme")));
-		services.AddScoped<IBradRepository, BradRepository>();
+		services.AddScoped<IBrandRepository, BradRepository>();
 		services.AddScoped<IModelRepository, ModelRepository>();
 		return services;
 	}

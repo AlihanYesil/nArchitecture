@@ -1,6 +1,6 @@
 ﻿using Application.Services.Repositories;
 using Core.Persistence.Repositories;
-using Domain.Entities;
+using Core.Security.Entities;
 using Persistence.Contexts;
 using System;
 using System.Collections.Generic;
@@ -10,10 +10,8 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories;
 
-public class BradRepository : EfRepositoryBase<Brand,Guid,BaseDbContext>, IBrandRepository
+public class EmailAuthenticatorRepository : EfRepositoryBase<EmailAuthenticator, int, BaseDbContext>, IEmailAuthenticatorRepository
 {
-	public BradRepository(BaseDbContext context): base(context)
-	{
-
-	}
+	public EmailAuthenticatorRepository(BaseDbContext context)
+		: base(context) { }
 }

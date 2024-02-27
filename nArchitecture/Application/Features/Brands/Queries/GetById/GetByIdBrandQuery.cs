@@ -17,9 +17,9 @@ public class GetByIdBrandQuery : IRequest<GetByIdBrandResponse>
 	public class GetByIdBrandResponseHandler : IRequestHandler<GetByIdBrandQuery, GetByIdBrandResponse>
 	{
 		private readonly IMapper _mapper;
-		private readonly IBradRepository _bradRepository;
+		private readonly IBrandRepository _bradRepository;
 
-		public GetByIdBrandResponseHandler(IMapper mapper, IBradRepository bradRepository)
+		public GetByIdBrandResponseHandler(IMapper mapper, IBrandRepository bradRepository)
 		{
 			_mapper = mapper;
 			_bradRepository = bradRepository;

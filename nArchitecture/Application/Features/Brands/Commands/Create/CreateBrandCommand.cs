@@ -26,11 +26,11 @@ public class CreateBrandCommand : IRequest<CreatedBrandResponse>,ITransacionalRe
 	public class CreateBrandCommandHandler : IRequestHandler<CreateBrandCommand, CreatedBrandResponse>
 	{
 
-		private readonly IBradRepository _brandRepository;
+		private readonly IBrandRepository _brandRepository;
 		private readonly  IMapper _mapper;
 		private readonly BrandBusinessRules _brandBusinessRules;
 
-		public CreateBrandCommandHandler(IBradRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
+		public CreateBrandCommandHandler(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
 		{
 			_brandRepository = brandRepository;
 			_mapper = mapper;
